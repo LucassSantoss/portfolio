@@ -60,7 +60,7 @@ export const stackLayers: StackLayer[] = [
     emphasis: true,
     items: [
       { name: "C# · ASP.NET Core", note: "Minha principal stack, usada no dia a dia de trabalho" },
-      { name: "Java · Spring Boot", note: "Investments Wallet e API de autenticação com JWT" },
+      { name: "Java · Spring Boot", note: "Investments Wallet, com Spring Security e testes em JUnit" },
     ],
   },
   {

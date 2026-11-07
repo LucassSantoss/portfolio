@@ -106,26 +106,6 @@ export const projects: Project[] = [
     visual: "wallet",
     links: [{ label: "Ver código no GitHub", href: "https://github.com/LucassSantoss/InvestmentsWallet" }],
   },
-  {
-    slug: "api-de-autenticacao",
-    title: "API de autenticação",
-    org: "Projeto pessoal",
-    period: "Backend",
-    role: "Desenvolvimento completo",
-    summary: "API REST de cadastro e login de usuários com tokens JWT.",
-    problem: "Toda aplicação precisa de login, e implementar autenticação do jeito certo é fácil de errar.",
-    solution:
-      "Cadastro, login e rotas protegidas com Spring Security e JWT, pronta para rodar com Docker.",
-    highlights: [
-      "Autenticação stateless com JWT",
-      "Filtro de segurança próprio no Spring Security",
-      "Docker Compose com hot reload e debug remoto",
-      "Imagem de produção otimizada",
-    ],
-    stack: ["Java", "Spring Boot", "Spring Security", "JWT", "Docker"],
-    visual: "auth",
-    links: [{ label: "Ver código no GitHub", href: "https://github.com/LucassSantoss/java-login-api" }],
-  },
 ];
 
 export function getProject(slug: string) {

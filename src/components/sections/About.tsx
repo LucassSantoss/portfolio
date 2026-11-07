@@ -12,7 +12,7 @@ const codeLines: { indent?: boolean; parts: [string, string][] }[] = [
   { indent: true, parts: [["k", "string "], ["t", "Cidade"], ["p", "  => "], ["s", '"São Carlos, SP"'], ["p", ";"]] },
   { indent: true, parts: [["k", "string "], ["t", "Cargo"], ["p", "   => "], ["s", '"Backend @ Softable"'], ["p", ";"]] },
   { indent: true, parts: [["k", "string "], ["t", "Curso"], ["p", "   => "], ["s", '"Eng. de Software, IFSP"'], ["p", ";"]] },
-  { indent: true, parts: [["k", "int    "], ["t", "AnosXp"], ["p", "  => "], ["n", "2"], ["p", ";"]] },
+  { indent: true, parts: [["k", "int    "], ["t", "AnosXp"], ["p", "  => "], ["n", "3"], ["p", ";"]] },
   { indent: true, parts: [["k", "string[] "], ["t", "Pratica"], ["p", " => ["], ["s", '"TDD"'], ["p", ", "], ["s", '"SOLID"'], ["p", ", "], ["s", '"CI/CD"'], ["p", "];"]] },
   { indent: true, parts: [["k", "string[] "], ["t", "Idiomas"], ["p", " => ["], ["s", '"PT"'], ["p", ", "], ["s", '"EN avançado"'], ["p", "];"]] },
   { parts: [["p", "}"]] },
@@ -74,7 +74,7 @@ export function About() {
             ))}
           </p>
           <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-            Há dois anos escrevo backend em C# e Java, do estágio ao time de produto. Hoje também lidero a equipe de um app
+            Há três anos escrevo backend em C# e Java, do estágio ao time de produto. Hoje também lidero a equipe de um app
             de roteiros de viagem com IA.
           </p>
           <div className="h-1 overflow-hidden rounded-full bg-line" aria-hidden="true">
