@@ -12,8 +12,7 @@ const response = [
   ["{", "p"],
   [`  "nome": "${profile.name}",`, "kv"],
   [`  "email": "${profile.email}",`, "kv"],
-  [`  "local": "${profile.city}",`, "kv"],
-  [`  "disponivel": true`, "kv"],
+  [`  "local": "${profile.city}"`, "kv"],
   ["}", "p"],
 ] as const;
 
@@ -132,7 +131,7 @@ export function Contact() {
 
         <pre
           data-response
-          aria-label={`Resposta: ${profile.name}, ${profile.email}, ${profile.city}, disponível.`}
+          aria-label={`Resposta: ${profile.name}, ${profile.email}, ${profile.city}.`}
           className="min-h-[19rem] min-w-0 overflow-x-auto rounded-2xl bg-ink p-5 font-mono text-[12.5px] leading-[1.75] text-soft sm:p-8 sm:text-base"
         >
           <code aria-hidden="true">
