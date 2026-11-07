@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0e1726;
+  --color-panel: #15233a;
+  --color-line: rgb(157 183 224 / 0.18);
+  --color-fg: #e8eef8;
+  --color-soft: #c6d2e6;
+  --color-muted: #9aabc6;
+  --color-dim: #6b7d9c;
+  --color-signal: #ff8a3d;
+  --color-signal-deep: #c2410c;
+  --color-net: #7cb4ff;
+  --color-ok: #5bd68a;
+  --color-paper: #f4f1ea;
+  --color-paper-muted: #4b5a73;
+
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-plex), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-fg);
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(157 183 224 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(157 183 224 / 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: clamp(1px, 0.14vw, 2px) var(--stroke, var(--color-fg));
+  }
+  .flow-line {
+    background-image: linear-gradient(var(--color-signal) 50%, transparent 50%);
+    background-size: 2px 12px;
+    animation: flow 0.6s linear infinite;
+  }
+  .caret {
+    animation: caret 1s steps(1) infinite;
+  }
+  .pulse-dot {
+    animation: pulse 1.6s infinite;
+  }
+}
+
+@keyframes flow {
+  to {
+    background-position: 0 24px;
+  }
+}
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(91 214 138 / 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(91 214 138 / 0);
+  }
+}
+
+/* View transition: the project card morphs into the project page */
+::view-transition-group(*) {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
