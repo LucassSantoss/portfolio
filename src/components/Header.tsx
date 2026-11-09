@@ -58,11 +58,6 @@ export function Header() {
             ))}
           </nav>
 
-          <span className="hidden items-center gap-2.5 text-sm text-muted xl:flex">
-            <span className="pulse-dot h-2 w-2 rounded-full bg-ok" />
-            Aberto a novas oportunidades
-          </span>
-
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -82,7 +77,7 @@ export function Header() {
         {open ? (
           <motion.div
             id="menu-mobile"
-            className="fixed inset-0 z-40 flex flex-col justify-between bg-ink px-5 pb-10 pt-28 sm:px-8 lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-ink px-5 pb-10 pt-28 sm:px-8 lg:hidden"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
@@ -104,10 +99,6 @@ export function Header() {
                 </motion.a>
               ))}
             </nav>
-            <p className="flex items-center gap-2.5 text-sm text-muted">
-              <span className="pulse-dot h-2 w-2 rounded-full bg-ok" />
-              Aberto a novas oportunidades
-            </p>
           </motion.div>
         ) : null}
       </AnimatePresence>

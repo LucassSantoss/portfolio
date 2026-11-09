@@ -79,9 +79,6 @@ html.lenis body {
   .caret {
     animation: caret 1s steps(1) infinite;
   }
-  .pulse-dot {
-    animation: pulse 1.6s infinite;
-  }
 }
 
 @keyframes flow {
@@ -92,14 +89,6 @@ html.lenis body {
 @keyframes caret {
   50% {
     opacity: 0;
-  }
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgb(91 214 138 / 0.6);
-  }
-  100% {
-    box-shadow: 0 0 0 10px rgb(91 214 138 / 0);
   }
 }
 
